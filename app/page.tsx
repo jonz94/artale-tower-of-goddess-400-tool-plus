@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { cn } from '@/lib/utils'
 import { LucideTrash2 } from 'lucide-react'
+import Link from 'next/link'
 import { RadioGroup as RadioGroupPrimitive } from 'radix-ui'
 import { useId, useState } from 'react'
 
@@ -139,6 +140,33 @@ export default function Home() {
           </div>
 
           <h3 className="text-lg">(如果找不到答案，請重新確認)</h3>
+        </div>
+
+        <div className="text-center">--- 我是分隔線 ---</div>
+
+        <div className="flex flex-col gap-y-4">
+          <div className="flex flex-col gap-y-2">
+            <h2 className="text-xl">✨ 特別感謝</h2>
+            <p>
+              <span>原版的女神 400 速解小工具: </span>
+              <Link
+                href="https://rvgin.github.io/tower-of-goddess/"
+                prefetch={false}
+                className="text-blue-600 underline"
+              >
+                https://rvgin.github.io/tower-of-goddess/
+              </Link>
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-y-2">
+            <h2 className="text-xl">🌱 主要改進的內容</h2>
+            <ul className="ml-4 list-disc">
+              <li>改善了原版有時會卡住、答案出不來的情況</li>
+              <li>增加了查表的方式</li>
+              <li>增加了深色主題</li>
+            </ul>
+          </div>
         </div>
 
         {/* TODO: change this into footer */}
