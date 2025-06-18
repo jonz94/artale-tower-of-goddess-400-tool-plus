@@ -50,31 +50,44 @@ export default function Home() {
         <ModeToggle></ModeToggle>
       </div>
 
-      <div className="mt-16 flex flex-col gap-y-8">
-        <div>
-          <pre>{input.includes('null') ? '隊長已進入<封印之室>。' : input}</pre>
-          <pre className="text-xl font-bold md:text-4xl">{answer}</pre>
+      <div className="mt-16 flex flex-col gap-y-8 p-6">
+        <div className="text-center">
+          <pre className={input.includes('null') ? 'text-sky-400' : ''}>
+            {input.includes('null') ? '隊長已進入<封印之室>。' : input}
+          </pre>
+          <pre
+            className={cn(
+              'text-xl font-bold md:text-4xl',
+              input.includes('null')
+                ? ''
+                : answerLookupTable[input as keyof typeof answerLookupTable]
+                  ? 'text-green-600'
+                  : 'text-destructive',
+            )}
+          >
+            {answer}
+          </pre>
         </div>
 
         <Card className="mx-auto w-80">
           <CardContent className="flex flex-col gap-y-4">
             <div className="flex items-center justify-center gap-x-8">
-              <p>隊長站空</p>
+              <p className="text-lg font-bold">隊長站空</p>
               <NumberSelector value={firstNumber} onValueChange={(value) => setFirstNumber(value)}></NumberSelector>
             </div>
 
             <div className="flex items-center justify-center gap-x-8">
-              <p>隊長站左</p>
+              <p className="text-lg font-bold">隊長站左</p>
               <NumberSelector value={secondNumber} onValueChange={(value) => setSecondNumber(value)}></NumberSelector>
             </div>
 
             <div className="flex items-center justify-center gap-x-8">
-              <p>隊長站中</p>
+              <p className="text-lg font-bold">隊長站中</p>
               <NumberSelector value={thirdNumber} onValueChange={(value) => setThirdNumber(value)}></NumberSelector>
             </div>
 
             <div className="flex items-center justify-center gap-x-8">
-              <p>隊長站右</p>
+              <p className="text-lg font-bold">隊長站右</p>
               <NumberSelector value={forthNumber} onValueChange={(value) => setForthNumber(value)}></NumberSelector>
             </div>
           </CardContent>
@@ -98,13 +111,13 @@ export default function Home() {
         <div className="text-center">--- 我是分隔線 ---</div>
 
         <div className="flex flex-col gap-y-4">
-          <h2 className="text-xl">🔎 查表法</h2>
+          <h2 className="text-xl font-bold">🔎 查表法</h2>
           <div className="font-mono">
             <p>使用說明：</p>
             <p>空左中右 👉 答案</p>
           </div>
 
-          <h3 className="text-lg">(站空為 0)</h3>
+          <h3 className="text-lg font-bold">(站空為 0)</h3>
 
           <div className="font-mono">
             <p>0 0 1 1 👉 211</p>
@@ -112,7 +125,7 @@ export default function Home() {
             <p>0 1 1 0 👉 112</p>
           </div>
 
-          <h3 className="text-lg">(站空為 1、一個 0 兩個 1)</h3>
+          <h3 className="text-lg font-bold">(站空為 1、一個 0 兩個 1)</h3>
 
           <div className="font-mono">
             <p>1 0 1 1 👉 022</p>
@@ -120,7 +133,7 @@ export default function Home() {
             <p>1 1 1 0 👉 220</p>
           </div>
 
-          <h3 className="text-lg">(站空為 1、012 各一)</h3>
+          <h3 className="text-lg font-bold">(站空為 1、012 各一)</h3>
 
           <div className="font-mono">
             <p>1 0 1 2 👉 031</p>
@@ -131,7 +144,7 @@ export default function Home() {
             <p>1 2 1 0 👉 130</p>
           </div>
 
-          <h3 className="text-lg">(站空為 2)</h3>
+          <h3 className="text-lg font-bold">(站空為 2)</h3>
 
           <div className="font-mono">
             <p>2 1 1 2 👉 004</p>
@@ -139,14 +152,14 @@ export default function Home() {
             <p>2 2 1 1 👉 400</p>
           </div>
 
-          <h3 className="text-lg">(如果找不到答案，請重新確認)</h3>
+          <h3 className="text-lg font-bold">(如果找不到答案，請重新確認)</h3>
         </div>
 
         <div className="text-center">--- 我是分隔線 ---</div>
 
         <div className="flex flex-col gap-y-4">
           <div className="flex flex-col gap-y-2">
-            <h2 className="text-xl">✨ 特別感謝</h2>
+            <h2 className="text-xl font-bold">✨ 特別感謝</h2>
             <p>
               <span>原版的女神 400 速解小工具: </span>
               <Link
@@ -160,7 +173,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-y-2">
-            <h2 className="text-xl">🌱 主要改進的內容</h2>
+            <h2 className="text-xl font-bold">🌱 主要改進的內容</h2>
             <ul className="ml-4 list-disc">
               <li>改善了原版有時會卡住、答案出不來的情況</li>
               <li>增加了查表的方式</li>
@@ -168,9 +181,6 @@ export default function Home() {
             </ul>
           </div>
         </div>
-
-        {/* TODO: change this into footer */}
-        <div className="invisible h-8">留白用</div>
       </div>
     </div>
   )
