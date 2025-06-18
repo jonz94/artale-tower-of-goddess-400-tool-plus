@@ -1,0 +1,14 @@
+{
+  // tailwindcss
+  "files.associations": {
+    "*.css": "tailwindcss",
+  },
+  "tailwindCSS.classFunctions": ["cva"],
+
+  // eslint
+  "eslint.format.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html"],
+}
