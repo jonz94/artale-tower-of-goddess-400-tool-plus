@@ -181,31 +181,31 @@ function NumberSelector({ className, ...props }: React.ComponentProps<typeof Rad
 
   return (
     <RadioGroup className={cn('min-w-40 grid-cols-3', className)} {...props}>
-      <div className="border-input has-data-[state=checked]:border-primary/50 has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px]">
+      <div className="border-input has-data-[state=checked]:bg-primary has-data-[state=checked]:text-background text-foreground has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px]">
         <RadioGroupItem id={`${id}-0`} value="0" className="sr-only" />
         <label
           htmlFor={`${id}-0`}
-          className="text-foreground cursor-pointer text-xs leading-none font-medium after:absolute after:inset-0"
+          className="cursor-pointer text-xs leading-none font-medium after:absolute after:inset-0"
         >
           0
         </label>
       </div>
 
-      <div className="border-input has-data-[state=checked]:border-primary/50 has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px]">
+      <div className="border-input has-data-[state=checked]:bg-primary has-data-[state=checked]:text-background text-foreground has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px]">
         <RadioGroupItem id={`${id}-1`} value="1" className="sr-only" />
         <label
           htmlFor={`${id}-1`}
-          className="text-foreground cursor-pointer text-xs leading-none font-medium after:absolute after:inset-0"
+          className="cursor-pointer text-xs leading-none font-medium after:absolute after:inset-0"
         >
           1
         </label>
       </div>
 
-      <div className="border-input has-data-[state=checked]:border-primary/50 has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px]">
+      <div className="border-input has-data-[state=checked]:bg-primary has-data-[state=checked]:text-background text-foreground has-focus-visible:border-ring has-focus-visible:ring-ring/50 relative flex cursor-pointer flex-col items-center gap-3 rounded-md border px-2 py-3 text-center shadow-xs transition-[color,box-shadow] outline-none has-focus-visible:ring-[3px]">
         <RadioGroupItem id={`${id}-2`} value="2" className="sr-only" />
         <label
           htmlFor={`${id}-2`}
-          className="text-foreground cursor-pointer text-xs leading-none font-medium after:absolute after:inset-0"
+          className="cursor-pointer text-xs leading-none font-medium after:absolute after:inset-0"
         >
           2
         </label>
