@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { cn } from '@/lib/utils'
-import { LucideRotateCw } from 'lucide-react'
+import { LucideTrash2 } from 'lucide-react'
 import { RadioGroup as RadioGroupPrimitive } from 'radix-ui'
 import { useId, useState } from 'react'
 
@@ -39,7 +39,7 @@ export default function Home() {
   const input = `${firstNumber}${secondNumber}${thirdNumber}${forthNumber}`
 
   const answer = input.includes('null')
-    ? '請輸入'
+    ? '請依序輸入'
     : (answerLookupTable[input as keyof typeof answerLookupTable] ?? '此組合不存在，請重新確認。')
 
   return (
@@ -51,35 +51,36 @@ export default function Home() {
 
       <div className="mt-16 flex flex-col gap-y-8">
         <div>
-          <pre>{input.includes('null') ? '尚未輸入' : input}</pre>
+          <pre>{input.includes('null') ? '隊長已進入<封印之室>。' : input}</pre>
           <pre className="text-xl font-bold md:text-4xl">{answer}</pre>
         </div>
 
         <Card className="mx-auto w-80">
           <CardContent className="flex flex-col gap-y-4">
             <div className="flex items-center justify-center gap-x-8">
-              <p>空</p>
+              <p>隊長站空</p>
               <NumberSelector value={firstNumber} onValueChange={(value) => setFirstNumber(value)}></NumberSelector>
             </div>
 
             <div className="flex items-center justify-center gap-x-8">
-              <p>左</p>
+              <p>隊長站左</p>
               <NumberSelector value={secondNumber} onValueChange={(value) => setSecondNumber(value)}></NumberSelector>
             </div>
 
             <div className="flex items-center justify-center gap-x-8">
-              <p>中</p>
+              <p>隊長站中</p>
               <NumberSelector value={thirdNumber} onValueChange={(value) => setThirdNumber(value)}></NumberSelector>
             </div>
 
             <div className="flex items-center justify-center gap-x-8">
-              <p>右</p>
+              <p>隊長站右</p>
               <NumberSelector value={forthNumber} onValueChange={(value) => setForthNumber(value)}></NumberSelector>
             </div>
           </CardContent>
 
           <CardFooter className="flex justify-center">
             <Button
+              variant="destructive"
               onClick={() => {
                 setFirstNumber(null)
                 setSecondNumber(null)
@@ -87,11 +88,14 @@ export default function Home() {
                 setForthNumber(null)
               }}
             >
-              <LucideRotateCw />
+              <LucideTrash2 />
               清除並重新輸入
             </Button>
           </CardFooter>
         </Card>
+
+        {/* TODO: change this into footer */}
+        <div className="invisible h-8">留白用</div>
       </div>
     </div>
   )
