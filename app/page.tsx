@@ -120,7 +120,7 @@ export default function Home() {
             <p>1 1 1 0 👉 220</p>
           </div>
 
-          <h3 className="text-lg">(站空為 0、012 各一)</h3>
+          <h3 className="text-lg">(站空為 1、012 各一)</h3>
 
           <div className="font-mono">
             <p>1 0 1 2 👉 031</p>
