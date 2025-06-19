@@ -174,7 +174,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-y-2">
             <h2 className="text-xl font-bold">🌱 主要改進的內容</h2>
-            <ul className="ml-4 list-disc">
+            <ul className="ml-6 list-disc">
               <li>改善了原版有時會卡住、答案出不來的情況</li>
               <li>增加了查表的方式</li>
               <li>增加了深色主題</li>
