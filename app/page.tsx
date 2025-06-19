@@ -186,6 +186,9 @@ export default function Home() {
   )
 }
 
+/**
+ * modified from https://github.com/origin-space/originui/blob/b146da1ebf3b3926135b890dd255905bfd3e3394/registry/default/components/comp-163.tsx
+ */
 function NumberSelector({ className, ...props }: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {
   const id = useId()
 
