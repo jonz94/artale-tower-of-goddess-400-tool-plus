@@ -29,6 +29,15 @@ const answerLookupTable = {
   '2112': '004',
   '2121': '040',
   '2211': '400',
+} as const
+
+const INTRODUCTION = '請依序輸入' as const
+const ANSWER_NOT_FOUND = '此組合不存在，請重新確認。' as const
+
+function tryToFindAnswer(
+  input: string,
+): (typeof answerLookupTable)[keyof typeof answerLookupTable] | typeof ANSWER_NOT_FOUND {
+  return answerLookupTable[input as keyof typeof answerLookupTable] ?? ANSWER_NOT_FOUND
 }
 
 export default function Home() {
@@ -39,9 +48,9 @@ export default function Home() {
 
   const input = `${firstNumber}${secondNumber}${thirdNumber}${forthNumber}`
 
-  const answer = input.includes('null')
-    ? '請依序輸入'
-    : (answerLookupTable[input as keyof typeof answerLookupTable] ?? '此組合不存在，請重新確認。')
+  const isInputIncomplete = input.includes('null')
+
+  const introductionOrAnswer = isInputIncomplete ? INTRODUCTION : tryToFindAnswer(input)
 
   return (
     <div className="grid min-h-dvh w-screen justify-center">
@@ -52,20 +61,20 @@ export default function Home() {
 
       <div className="mt-16 flex flex-col gap-y-8 p-6">
         <div className="text-center">
-          <pre className={input.includes('null') ? 'text-sky-400' : ''}>
-            {input.includes('null') ? '隊長已進入<封印之室>。' : input}
+          <pre className={isInputIncomplete ? 'text-sky-400' : ''}>
+            {isInputIncomplete ? '隊長已進入<封印之室>。' : input}
           </pre>
           <pre
             className={cn(
               'text-xl font-bold md:text-4xl',
-              input.includes('null')
+              introductionOrAnswer === '請依序輸入'
                 ? ''
-                : answerLookupTable[input as keyof typeof answerLookupTable]
-                  ? 'text-green-600'
-                  : 'text-destructive',
+                : introductionOrAnswer === '此組合不存在，請重新確認。'
+                  ? 'text-destructive'
+                  : 'text-green-600',
             )}
           >
-            {answer}
+            {introductionOrAnswer}
           </pre>
         </div>
 
