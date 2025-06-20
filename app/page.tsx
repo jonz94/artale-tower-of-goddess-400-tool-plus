@@ -189,6 +189,30 @@ export default function Home() {
               <li>增加了深色主題</li>
             </ul>
           </div>
+
+          <div className="flex flex-col gap-y-2">
+            <h2 className="text-xl font-bold">📝 開放原始碼</h2>
+            <p>
+              <span>GitHub 專案網址: </span>
+              <Link
+                href="https://github.com/jonz94/tower-of-goddess-400-tool-plus"
+                prefetch={false}
+                className="text-blue-600 underline"
+              >
+                https://github.com/jonz94/tower-of-goddess-400-tool-plus
+              </Link>
+            </p>
+            <p>
+              <span>開源授權條款: </span>
+              <Link
+                href="https://github.com/jonz94/tower-of-goddess-400-tool-plus/blob/main/LICENSE"
+                prefetch={false}
+                className="text-blue-600 underline"
+              >
+                MIT License
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </div>
