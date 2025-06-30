@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "tower-of-goddess-400-tool-plus",
+      "name": "artale-tower-of-goddess-400-tool-plus",
       "dependencies": {
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
