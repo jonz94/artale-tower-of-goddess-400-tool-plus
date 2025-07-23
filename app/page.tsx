@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="grid min-h-dvh w-screen justify-center">
+    <div className="grid min-h-dvh w-full justify-center">
       <div className="absolute top-0 flex w-full items-center justify-between p-4">
         <h1 className="text-xl font-bold">女神 400 速解小工具 加強版</h1>
         <ModeToggle></ModeToggle>
